@@ -16,7 +16,7 @@ let rates = {
 
 async function fetchRates() {
     try {
-        const response = await fetch('https://api.exchangerate-api.com/v4/latest/BRL');
+        const response = await fetch('https://open.er-api.com/v6/latest/BRL');
         const data = await response.json();
         rates.dolar = 1 / data.rates.USD;
         rates.euro = 1 / data.rates.EUR;

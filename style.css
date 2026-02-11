@@ -7,9 +7,11 @@
 }
 
 body {
-  background-color: #8A51FC
+  background-image: url('./assets/_Money HackVideo Youtube Thumbnail.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-
 .logo-inicial {
   display: block;
   width: 300px;
@@ -19,10 +21,10 @@ body {
 }
 
 main {
-  width: 375px;
+  width: 300px;
   background: #F4F4F4;
   border-radius: 20px;
-  margin: 0 auto 40px;
+  margin: 0 420px 40px auto;
   padding: 44px 24px 23px;
 }
 
@@ -40,7 +42,7 @@ input {
   border-radius: 4px;
   height: 48px;
   width: 100%;
-  margin-bottom: 24px;
+  margin-bottom:24px;
   padding-left: 18px;
   appearance: none;
   font-size: 16px;
@@ -50,7 +52,7 @@ input {
 }
 
 button {
-  background-color: #8A51FC;
+  background-color: #0c64d8ce;
   border-radius: 5px;
   width: 100%;
   border: none;
@@ -70,7 +72,7 @@ button:active {
 }
 
 section {
-  border: 1px solid #772FD3;
+  border: 1px solid #0b19e7d3;
   border-radius: 20px;
   margin-top: 36px;
   padding: 12px;

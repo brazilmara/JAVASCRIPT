@@ -9,12 +9,25 @@ const currencyImgFrom = document.getElementById("currency-img-from")
 const currencyName = document.getElementById("currency-name")
 const currencyImg = document.querySelector(".currency-img")
 
-const rates = {
+let rates = {
     real: 1,
-    dolar: 5.2,
-    euro: 6.2,
-    libra: 7.3,
     bitcoin: 474767
+}
+
+async function fetchRates() {
+    try {
+        const response = await fetch('https://api.exchangerate-api.com/v4/latest/BRL');
+        const data = await response.json();
+        rates.dolar = 1 / data.rates.USD;
+        rates.euro = 1 / data.rates.EUR;
+        rates.libra = 1 / data.rates.GBP;
+    } catch (error) {
+        console.error('Erro ao buscar taxas de câmbio:', error);
+        // Fallback para valores hardcoded se a API falhar
+        rates.dolar = 5.2;
+        rates.euro = 6.2;
+        rates.libra = 7.3;
+    }
 }
 
 function convertValues() {
@@ -104,8 +117,13 @@ function changeCurrency() {
 }
 
 // Initial setup
-changeCurrency()
-convertValues()
+async function init() {
+    await fetchRates();
+    changeCurrency();
+    convertValues();
+}
+
+init();
 
 // Event listeners
 currencySelectFrom.addEventListener("change", changeCurrency)

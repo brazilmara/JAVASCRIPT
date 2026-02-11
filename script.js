@@ -18,22 +18,22 @@ let rates = {
 async function fetchRates() {
     try {
         console.log('Buscando taxas de câmbio...');
-        const response = await fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/brl.json');
+        const response = await fetch('https://api.exchangerate.host/latest?base=BRL');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
         console.log('Dados recebidos:', data);
-        rates.dolar = data.brl.usd;
-        rates.euro = data.brl.eur;
-        rates.libra = data.brl.gbp;
+        rates.dolar = data.rates.USD;
+        rates.euro = data.rates.EUR;
+        rates.libra = data.rates.GBP;
         console.log('Taxas atualizadas:', rates.dolar, rates.euro, rates.libra);
     } catch (error) {
         console.error('Erro ao buscar taxas de câmbio:', error);
         // Fallback para valores hardcoded se a API falhar
-        rates.dolar = 5.6;
-        rates.euro = 6.0;
-        rates.libra = 7.0;
+        rates.dolar = 5.2;
+        rates.euro = 5.6;
+        rates.libra = 6.3;
         console.log('Usando valores de fallback:', rates.dolar, rates.euro, rates.libra);
     }
 }

@@ -142,3 +142,58 @@ margin-top: 10px;
 .currency-value {
 margin-top: 10px;
 }
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  main {
+    width: 80%;
+    max-width: 300px;
+    margin: 20px auto 100px;
+  }
+
+  body {
+    background-attachment: fixed;
+  }
+
+  .cifrão-img {
+    width: 200px;
+  }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 480px) {
+  main {
+    width: 90%;
+    margin: 10px auto 50px;
+    padding: 10px 15px;
+    height: auto;
+  }
+
+  .cifrão-img {
+    width: 180px;
+    margin-bottom: 10px;
+  }
+
+  select, input, button {
+    height: 40px;
+    font-size: 14px;
+    padding-left: 12px;
+  }
+
+  .currency-img, #currency-img-from {
+    height: 50px;
+  }
+
+  .currency-value, .currency-value-to-convert {
+    font-size: 16px;
+  }
+
+  .arrow-img {
+    margin: 10px 0;
+  }
+
+  section {
+    margin-top: 20px;
+    padding: 10px;
+  }
+}

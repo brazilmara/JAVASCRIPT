@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url('./assets/_Money%20HackVideo%20Youtube%20Thumbnail.png');
+  background-image: url("./assets/_Money_HackVideo_Youtube_Thumbnail.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

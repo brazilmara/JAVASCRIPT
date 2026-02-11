@@ -18,15 +18,15 @@ let rates = {
 async function fetchRates() {
     try {
         console.log('Buscando taxas de câmbio...');
-        const response = await fetch('https://open.er-api.com/v6/latest/BRL');
+        const response = await fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/brl.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
         console.log('Dados recebidos:', data);
-        rates.dolar = 1 / data.rates.USD;
-        rates.euro = 1 / data.rates.EUR;
-        rates.libra = 1 / data.rates.GBP;
+        rates.dolar = data.brl.usd;
+        rates.euro = data.brl.eur;
+        rates.libra = data.brl.gbp;
         console.log('Taxas atualizadas:', rates.dolar, rates.euro, rates.libra);
     } catch (error) {
         console.error('Erro ao buscar taxas de câmbio:', error);

@@ -6,11 +6,16 @@
   outline: none;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  background-image: url("./assets/_Money_HackVideo_Youtube_Thumbnail.png");
-  background-size: contain;
+  background-image: url('./assets/TEMPLATE\ CONVERSOR\ DE\ MOEDAS.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  height: 100vh;
 }
 .logo-inicial {
   display: block;
@@ -22,10 +27,11 @@ body {
 
 main {
   width: 300px;
-  background: #F4F4F4;
+  height: 850px;
+  background: hsl(44, 95%, 46%);
   border-radius: 20px;
-  margin: 0 420px 40px auto;
-  padding: 44px 24px 23px;
+  margin: 0 420px 200px 200px;
+  padding: 10px 24px 24px;
 }
 
 label {
@@ -42,7 +48,7 @@ input {
   border-radius: 4px;
   height: 48px;
   width: 100%;
-  margin-bottom:24px;
+  margin-bottom:12px;
   padding-left: 18px;
   appearance: none;
   font-size: 16px;
@@ -72,7 +78,7 @@ button:active {
 }
 
 section {
-  border: 1px solid #0b19e7d3;
+  border: 1px solid #e70b0b00;
   border-radius: 20px;
   margin-top: 36px;
   padding: 12px;
@@ -80,7 +86,13 @@ section {
   flex-direction: column;
   align-items: center;
 }
-  .arrow-img {
+.cifrão-img {
+  width: 250px;
+  height: auto;
+  margin: 0px 0px 15px;
+  display: block;
+}
+.arrow-img {
   margin: 15px 0;
 }
 
@@ -89,11 +101,18 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-gap: 4px;
+gap: -20px;
+}
+
+.currency-box p {
+margin: 0;
+padding: 0;
+line-height: 1;
 }
 
 .currency-img {
 height: 65px;
+margin: 0 0 -10px 0;
 }
 
 #currency-img-from {
@@ -103,12 +122,23 @@ height: 65px;
 .currency {
 color: #777777;
 font-size: 14px;
-height: 80px;
+height: auto;
+margin: -10px 0 0 0;
+line-height: 0.8;
 }
 
 .currency-value, .currency-value-to-convert {
 color: #555555;
 font-weight: 700;
 font-size: 20px;
+margin: 0;
+margin-top: -15px;
 }
 
+#currency-name {
+margin-top: 10px;
+}
+
+.currency-value {
+margin-top: 10px;
+}

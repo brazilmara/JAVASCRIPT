@@ -17,17 +17,24 @@ let rates = {
 
 async function fetchRates() {
     try {
+        console.log('Buscando taxas de câmbio...');
         const response = await fetch('https://open.er-api.com/v6/latest/BRL');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
+        console.log('Dados recebidos:', data);
         rates.dolar = 1 / data.rates.USD;
         rates.euro = 1 / data.rates.EUR;
         rates.libra = 1 / data.rates.GBP;
+        console.log('Taxas atualizadas:', rates.dolar, rates.euro, rates.libra);
     } catch (error) {
         console.error('Erro ao buscar taxas de câmbio:', error);
         // Fallback para valores hardcoded se a API falhar
         rates.dolar = 5.6;
         rates.euro = 6.0;
         rates.libra = 7.0;
+        console.log('Usando valores de fallback:', rates.dolar, rates.euro, rates.libra);
     }
 }
 

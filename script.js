@@ -25,9 +25,9 @@ async function fetchRates() {
     } catch (error) {
         console.error('Erro ao buscar taxas de câmbio:', error);
         // Fallback para valores hardcoded se a API falhar
-        rates.dolar = 5.2;
+        rates.dolar = 5.5;
         rates.euro = 6.2;
-        rates.libra = 7.3;
+        rates.libra = 6.8;
     }
 }
 

@@ -25,9 +25,9 @@ async function fetchRates() {
     } catch (error) {
         console.error('Erro ao buscar taxas de câmbio:', error);
         // Fallback para valores hardcoded se a API falhar
-        rates.dolar = 5.5;
-        rates.euro = 6.2;
-        rates.libra = 6.8;
+        rates.dolar = 5.6;
+        rates.euro = 6.0;
+        rates.libra = 7.0;
     }
 }
 
@@ -125,6 +125,9 @@ async function init() {
 }
 
 init();
+
+// Update rates every 60 seconds
+setInterval(fetchRates, 60000);
 
 // Event listeners
 currencySelectFrom.addEventListener("change", changeCurrency)

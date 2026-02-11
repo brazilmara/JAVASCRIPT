@@ -1,4 +1,5 @@
 const convertButton = document.querySelector(".convert-button")
+const updateRatesButton = document.querySelector(".update-rates-button")
 const currencySelectFrom = document.querySelector(".currency-select-from")
 const currencySelect = document.querySelector(".currency-select")
 const inputCurrency = document.querySelector(".input-currency")
@@ -129,4 +130,8 @@ init();
 currencySelectFrom.addEventListener("change", changeCurrency)
 currencySelect.addEventListener("change", changeCurrency)
 convertButton.addEventListener("click", convertValues)
+updateRatesButton.addEventListener("click", async () => {
+    await fetchRates();
+    convertValues(); // Recalculate with new rates
+})
 

@@ -69,6 +69,11 @@ button {
   cursor: pointer;
 }
 
+.update-rates-button {
+  background-color: #28a745;
+  margin-top: 10px;
+}
+
 button:hover {
   opacity: 0.8;
 }
